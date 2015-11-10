@@ -1,8 +1,9 @@
-var $work = $("#work")
+(function(undefined) {
+  'use strict'
 
-$work.empty()
+  var work = document.querySelector('#work')
 
-$(document).ready(function(){
+  var allCredits = []
 
   var credits = [
     {title: "Much Ado About Nothing", role: "Benedick"},
@@ -17,16 +18,23 @@ $(document).ready(function(){
     {title: "Picasso at the Lapin Agile", role: "Gaston"},
   ]
 
-  var allCredits = []
+  work.innerHTML = ''
 
   credits.forEach(function(credit, index, array) {
     if (index > 0 && index % 2 === 0) {
-      allCredits.push(['<div class="col-sm-4 col-xs-12 col-lg-offset-3"><p><t>', credit.title, '</t><br/>', credit.role, '</p></div>'].join(''))
+      allCredits.push([
+        '<div class="col-sm-4 col-xs-12 col-lg-offset-3">',
+          '<p><t>', credit.title, '</t><br/>', credit.role, '</p>',
+        '</div>'
+      ].join(''))
     } else {
-      allCredits.push(['<div class="col-sm-4 col-xs-12"><p><t>', credit.title, '</t><br/>', credit.role, '</p></div>'].join(''))
+      allCredits.push([
+        '<div class="col-sm-4 col-xs-12">',
+          '<p><t>', credit.title, '</t><br/>', credit.role, '</p>',
+        '</div>'
+      ].join(''))
     }
   })
 
-  $work.html(allCredits)
-
-})
+  work.innerHTML = allCredits.join('')
+})();
