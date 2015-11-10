@@ -18,8 +18,6 @@
     {title: "Picasso at the Lapin Agile", role: "Gaston"},
   ]
 
-  work.innerHTML = ''
-
   credits.forEach(function(credit, index, array) {
     if (index > 0 && index % 2 === 0) {
       allCredits.push([
@@ -35,6 +33,8 @@
       ].join(''))
     }
   })
+
+  work.innerHTML = ''
 
   work.innerHTML = allCredits.join('')
 })();
