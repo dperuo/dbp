@@ -21,13 +21,13 @@
   credits.forEach(function(credit, index, array) {
     if (index > 0 && index % 2 === 0) {
       allCredits.push([
-        '<div class="col-sm-4 col-xs-12 col-lg-offset-3">',
+        '<div class="col-sm-4 col-xs-12 col-lg-offset-3  work__credit">',
           '<p><t>', credit.title, '</t><br/>', credit.role, '</p>',
         '</div>'
       ].join(''))
     } else {
       allCredits.push([
-        '<div class="col-sm-4 col-xs-12">',
+        '<div class="col-sm-4 col-xs-12  work__credit">',
           '<p><t>', credit.title, '</t><br/>', credit.role, '</p>',
         '</div>'
       ].join(''))
